@@ -37,7 +37,7 @@ export const Container = styled.div`
       h2 {
         font-size: 2.6rem;
         line-height: 2.6rem;
-        margin-bottom: 0.2rem;
+        margin-bottom: 0.4rem;
       }
     }
   }

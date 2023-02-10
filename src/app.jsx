@@ -8,6 +8,9 @@ import { ThemeLayout } from "./layouts/ThemeLayout";
 
 export const App = () => {
   const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+
   const inputRef = useRef();
 
   const fetchGithub = async () => {
@@ -21,7 +24,12 @@ export const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetchGithub();
+    setLoading(true);
+
+    setTimeout(() => {
+      fetchGithub();
+      setLoading(false);
+    }, 2000);
   };
 
   return (
@@ -29,8 +37,12 @@ export const App = () => {
       <Container>
         <AppLayout>
           <Header />
-          <SearchBar handleSubmit={handleSubmit} inputRef={inputRef} />
-          <Result data={data} />
+          <SearchBar
+            handleSubmit={handleSubmit}
+            inputRef={inputRef}
+            error={error}
+          />
+          <Result data={data} loading={loading} error={error} />
         </AppLayout>
       </Container>
     </ThemeLayout>

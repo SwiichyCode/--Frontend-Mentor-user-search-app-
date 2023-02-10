@@ -14,7 +14,12 @@ export const Container = styled.div`
   .wrapper {
     width: 100%;
     ${({ theme }) => theme.mixins.flexAlignCenter};
+    justify-content: flex-end;
     gap: 0.9rem;
+
+    @media screen and (min-width: 768px) {
+      gap: 2.3rem;
+    }
   }
 
   img {
@@ -70,4 +75,12 @@ export const Container = styled.div`
       padding: 0 2.4rem;
     }
   }
+`;
+
+export const ErrorMessage = styled.p`
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+  color: #f74646;
+  text-transform: capitalize;
 `;

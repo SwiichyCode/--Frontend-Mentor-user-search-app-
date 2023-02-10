@@ -10,3 +10,7 @@ export const Container = styled.div`
     padding: 4rem;
   }
 `;
+
+export const SpinnerContainer = styled(Container)`
+  ${({ theme }) => theme.mixins.flexCenter};
+`;

@@ -11,35 +11,36 @@ export const Container = styled.ul`
     flex-wrap: wrap;
     justify-content: space-between;
   }
+`;
 
-  li {
-    width: 100%;
-    max-width: 20rem;
+export const Item = styled.li`
+  width: 100%;
+  max-width: 20rem;
+  ${({ theme }) => theme.mixins.flexCenter};
+  justify-content: flex-start;
+  gap: 1.92rem;
+  font-weight: 400;
+  font-size: 1.3rem;
+  line-height: 1.9rem;
+  color: #4b6a9b;
+  color: ${({ available }) => (available ? "#4b6a9b" : "#4B6A9B")};
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  div {
     ${({ theme }) => theme.mixins.flexCenter};
-    justify-content: flex-start;
-    gap: 1.92rem;
-    font-weight: 400;
-    font-size: 1.3rem;
-    line-height: 1.9rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  a {
+    text-decoration: none;
     color: #4b6a9b;
 
-    @media screen and (min-width: 768px) {
-      font-size: 1.5rem;
-    }
-
-    div {
-      ${({ theme }) => theme.mixins.flexCenter};
-      width: 2rem;
-      height: 2rem;
-    }
-
-    a {
-      text-decoration: none;
-      color: #4b6a9b;
-
-      &:hover {
-        text-decoration: underline;
-      }
+    &:hover {
+      text-decoration: underline;
     }
   }
 `;
