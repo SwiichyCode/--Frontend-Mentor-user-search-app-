@@ -23,12 +23,15 @@ export const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setLoading(true);
 
     setTimeout(() => {
-      fetchGithub();
       setLoading(false);
+      fetchGithub();
+
+      // Clear data
+      inputRef.current.value = "";
+      setData(null);
     }, 2000);
   };
 

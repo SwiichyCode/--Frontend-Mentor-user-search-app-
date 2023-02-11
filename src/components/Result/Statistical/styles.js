@@ -1,34 +1,8 @@
-import React, { useContext } from "react";
 import styled from "styled-components";
-import { DataContext } from "./Result";
 
-export const Statistical = () => {
-  const data = useContext(DataContext);
-  return (
-    <Container>
-      <div className="wrapper">
-        <ul>
-          <li>
-            <h3>Repos</h3>
-            <span>{data ? data?.public_repos : "8"}</span>
-          </li>
-          <li>
-            <h3>Followers</h3>
-            <span>{data ? data?.followers : "3938"}</span>
-          </li>
-          <li>
-            <h3>Following</h3>
-            <span>{data ? data?.following : "9"}</span>
-          </li>
-        </ul>
-      </div>
-    </Container>
-  );
-};
-
-const Container = styled.div`
+export const Container = styled.div`
   background: var(--color-grey);
-  border-radius: 10px;
+  border-radius: 1rem;
   padding: 1.8rem 1.4rem 1.9rem 1.5rem;
 
   @media screen and (min-width: 768px) {
@@ -53,16 +27,16 @@ const Container = styled.div`
         font-weight: 400;
         font-size: 1.1rem;
         line-height: 1.6rem;
-        color: #4b6a9b;
+        color: var(--color-blue-600);
       }
 
       span {
         font-weight: 700;
-        font-size: 16px;
-        line-height: 24px;
+        font-size: 1.6rem;
+        line-height: 2.4rem;
         text-align: center;
         text-transform: uppercase;
-        color: #2b3442;
+        color: var(--color-dark);
       }
 
       @media screen and (min-width: 768px) {

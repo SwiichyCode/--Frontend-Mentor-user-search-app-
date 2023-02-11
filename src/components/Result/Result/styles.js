@@ -13,4 +13,5 @@ export const Container = styled.div`
 
 export const SpinnerContainer = styled(Container)`
   ${({ theme }) => theme.mixins.flexCenter};
+  height: 539px;
 `;
